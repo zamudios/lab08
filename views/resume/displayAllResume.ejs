@@ -1,0 +1,19 @@
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Name</th><th>Education</th><th>Professional Summary</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/resume/?userId=<%= rs[i].userId %>"> <%= rs[i].resumeName %></a></td>
+            <td><%= rs[i].education%></td>
+            <td><%= rs[i].ps%> </td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No resumes are entered into the resume database table.
+    <% } %>
+</div>
+<div style="margin-top:10px;">
+    <a href="/resume/create">Create New Resume</a>
+</div>

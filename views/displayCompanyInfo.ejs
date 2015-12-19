@@ -1,0 +1,6 @@
+<% if(rs.length > 0) { %>
+Company Name: <%= rs[0].companyName %><br />
+Compant ID: <%= rs[0].companyId %>
+<% } else { %>
+No account matched this company id <%= companyId %>.
+<% } %>

@@ -1,0 +1,21 @@
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr>
+            <th>User Name</th>
+            <th>Company Name</th>
+            <th>Job Description</th>
+        </tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a><%= rs[i].Name %> </a></td>
+            <td><a><%= rs[i].companyId%></a></td>
+            <td><a> <%= rs[i].Job %></a></td>
+        </tr>
+
+        <% } %>
+    </table>
+    <% } else { %>
+    No accounts are entered into the Account database table.
+    <% } %>
+</div>

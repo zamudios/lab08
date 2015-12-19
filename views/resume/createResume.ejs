@@ -1,0 +1,26 @@
+<% include ../partials/header.ejs %>
+
+    <div id="message" style="display: none">this div is hidden</div>
+    <form id="newResume" action="/resume_routes/save/">
+        <label for="resumeName">Resume Name</label></br> <input type="text" id="resumeName" name="resumename" /><br /> </br>
+
+        <label for="professionalSummary">Professional Summary</label></br>
+        <textarea id="professionalSummary" name="professional" style="width:400px;height:150px"></textarea></br></br>
+
+        <label for="worked">What schools have you worked for?</label><br />
+        <div id="workedFor"></div></br></br>
+
+        <label for="worked2">What Companies have you worked for?</label><br/>
+        <div id="workedWith"></div></br></br>
+
+
+        <input type="submit">
+    </form>
+    </br>
+    <div>
+        <a href="/">Home</a>
+    </div>
+
+    <script src="/js/worked.js"></script>
+    <script src="/js/workedWith.js"></script>
+<%include ../partials/footer.ejs%>

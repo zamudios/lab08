@@ -1,0 +1,26 @@
+<% include ../partials/header.ejs %>
+<!--form action="/users/saveComp/"-->
+
+<form action="../save" class="col-md-4">
+    <div class="form-group">
+        <label for="companyName"> Company Name: </label>
+        <input type="text" id="companyName" name="companyName" class="form-control"/>
+        </br>
+    </div>
+
+    <label for="address_id">Address:</label>
+    <select id="address_id" name="addressId" class="form-control">
+            <% address.forEach(function(entry) { %>
+                <% var address = entry.street + " " + entry.city + ", " + entry.state + " " + entry.zipcode; %>
+                <option value="<%= entry.addressId %>"><%= address %></option>
+            <% }); %>
+    </select>
+    </br>
+
+    <input type="submit">
+</form>
+</br>
+<div>
+<a href="/">Home</a>
+</div>
+<%include ../partials/footer.ejs%>

@@ -1,0 +1,21 @@
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Company Name</th><th>Address</th><th>&nbsp;</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/company/?company_id=<%= rs[i].companyId %>"><%= rs[i].companyName%></a></td>
+            <% var address = rs[i].street + " " + rs[i].city + ", " + rs[i].state + " " + rs[i].zipcode; %>
+            <td><%= address %></td>
+            <td><a href="/company/delete?companyId=<%= rs[i].companyId %>&name=<%= rs[i].companyName %>">Delete</a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No accounts are entered into the Account database table.
+    <% } %>
+</div>
+
+<div style="margin-top:10px;">
+    <a href="/company/create/">Create New Account</a>
+</div>

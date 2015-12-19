@@ -1,0 +1,19 @@
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Name</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/schools/?school_id=<%= rs[i].userId %>"> <%= rs[i].lastName %>, <%= rs[i].firstName %></a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    <p>No accounts are entered into the Account database table.</p>
+    No accounts are entered into the Account database table.
+    <% } %>
+</div>
+
+<div style="margin-top:10px;">
+    <a href="/users/create/">Create New Account</a>
+</div>
